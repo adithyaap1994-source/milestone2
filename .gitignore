@@ -1,0 +1,19 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+
+# Local generated artifacts (reproducible)
+phase-1/data/raw/*.html
+phase-1/data/normalized/*.jsonl
+phase-1/data/chunks/*.jsonl
+phase-1/data/index/*.jsonl
+phase-1/reports/phase1_run_*.json
+phase-1/reports/local_scheduler_*.log

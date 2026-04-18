@@ -10,10 +10,14 @@ from typing import Any, Dict, List
 import requests
 import yaml
 from bs4 import BeautifulSoup
-from sentence_transformers import SentenceTransformer
+try:
+    from sentence_transformers import SentenceTransformer
+except Exception:  # pragma: no cover - optional dependency
+    SentenceTransformer = None
 
 EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 EMBEDDING_MODEL_VERSION = "bge-small-en-v1.5"
+FALLBACK_VECTOR_DIM = 64
 
 
 def _ensure_dir(path: Path) -> None:
@@ -65,6 +69,21 @@ def _fetch_html_with_retry(url: str, headers: Dict[str, str], attempts: int = 3,
     }
 
 
+def _fallback_embed(text: str, dim: int = FALLBACK_VECTOR_DIM) -> List[float]:
+    """Generate deterministic lightweight embedding when ML model is unavailable."""
+    vec = [0.0] * dim
+    words = text.split()
+    if not words:
+        return vec
+    for idx, token in enumerate(words):
+        bucket = hash(token) % dim
+        vec[bucket] += 1.0 + ((idx % 7) / 10.0)
+    norm = sum(x * x for x in vec) ** 0.5
+    if norm > 0:
+        vec = [x / norm for x in vec]
+    return vec
+
+
 def run_phase1(base_dir: Path) -> Dict[str, int]:
     cfg_path = base_dir / "config" / "source_registry.yaml"
     with cfg_path.open("r", encoding="utf-8") as f:
@@ -82,7 +101,8 @@ def run_phase1(base_dir: Path) -> Dict[str, int]:
     raw_dir = base_dir / "data" / "raw"
     _ensure_dir(raw_dir)
 
-    embedder = SentenceTransformer(EMBEDDING_MODEL_NAME)
+    embedder = SentenceTransformer(EMBEDDING_MODEL_NAME) if SentenceTransformer is not None else None
+    embedding_model_version = EMBEDDING_MODEL_VERSION if embedder is not None else "fallback-hash-v1"
 
     for src in sources:
         url = src["source_url"]
@@ -157,14 +177,17 @@ def run_phase1(base_dir: Path) -> Dict[str, int]:
             )
 
         if chunk_texts:
-            vectors = embedder.encode(chunk_texts, normalize_embeddings=True)
+            if embedder is not None:
+                vectors = [vec.tolist() for vec in embedder.encode(chunk_texts, normalize_embeddings=True)]
+            else:
+                vectors = [_fallback_embed(text) for text in chunk_texts]
             for idx, vec in enumerate(vectors):
                 chunk_id = chunk_ids[idx]
                 chunk_text = chunk_texts[idx]
                 vector_rows.append(
                     {
                         "chunk_id": chunk_id,
-                        "vector": vec.tolist(),
+                        "vector": vec,
                         "metadata": {
                             "chunk_id": chunk_id,
                             "doc_id": doc_id,
@@ -172,7 +195,7 @@ def run_phase1(base_dir: Path) -> Dict[str, int]:
                             "source_type": src["source_type"],
                             "scheme_name": src["scheme_name"],
                             "last_updated": None,
-                            "embedding_model_version": EMBEDDING_MODEL_VERSION,
+                            "embedding_model_version": embedding_model_version,
                             "pipeline_run_id": run_id,
                         },
                     }
@@ -188,7 +211,7 @@ def run_phase1(base_dir: Path) -> Dict[str, int]:
                             "source_type": src["source_type"],
                             "scheme_name": src["scheme_name"],
                             "last_updated": None,
-                            "embedding_model_version": EMBEDDING_MODEL_VERSION,
+                            "embedding_model_version": embedding_model_version,
                             "pipeline_run_id": run_id,
                         },
                     }
@@ -200,7 +223,7 @@ def run_phase1(base_dir: Path) -> Dict[str, int]:
     _write_jsonl(base_dir / "data" / "index" / "keyword_payload.jsonl", keyword_rows)
     report = {
         "run_id": run_id,
-        "embedding_model": EMBEDDING_MODEL_VERSION,
+        "embedding_model": embedding_model_version,
         "sources_active": len(sources),
         "raw_docs": len(raw_rows),
         "normalized_docs": len(norm_rows),
