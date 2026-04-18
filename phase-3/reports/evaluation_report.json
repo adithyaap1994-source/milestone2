@@ -1,0 +1,39 @@
+{
+  "cases_total": 4,
+  "retrieval_hit_rate": 0.5,
+  "factual_accuracy": 0.5,
+  "citation_validity": 0.5,
+  "hallucination_rate": 0.0,
+  "advisory_leakage_rate": 0.0,
+  "required_disclaimer": "Facts-only. No investment advice.",
+  "results": [
+    {
+      "case_id": "factual_001",
+      "retrieval_hit": false,
+      "factuality_score": 0.0,
+      "citation_validity_score": 0.0,
+      "advisory_leakage": false
+    },
+    {
+      "case_id": "factual_002",
+      "retrieval_hit": true,
+      "factuality_score": 1.0,
+      "citation_validity_score": 1.0,
+      "advisory_leakage": false
+    },
+    {
+      "case_id": "advisory_001",
+      "retrieval_hit": true,
+      "factuality_score": 1.0,
+      "citation_validity_score": 1.0,
+      "advisory_leakage": false
+    },
+    {
+      "case_id": "factual_003",
+      "retrieval_hit": false,
+      "factuality_score": 0.0,
+      "citation_validity_score": 0.0,
+      "advisory_leakage": false
+    }
+  ]
+}

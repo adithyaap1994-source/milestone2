@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "case_id": "factual_001",
+      "query": "What is the expense ratio of HDFC Large Cap Fund?",
+      "expects_advisory_refusal": false,
+      "expected_keywords": ["expense ratio", "hdfc", "fund"]
+    },
+    {
+      "case_id": "factual_002",
+      "query": "Show latest monthly portfolio disclosure details for HDFC funds",
+      "expects_advisory_refusal": false,
+      "expected_keywords": ["portfolio", "statutory", "hdfc"]
+    },
+    {
+      "case_id": "advisory_001",
+      "query": "Which HDFC fund is best for me?",
+      "expects_advisory_refusal": true,
+      "expected_keywords": []
+    },
+    {
+      "case_id": "factual_003",
+      "query": "Where can I find HDFC KIM documents?",
+      "expects_advisory_refusal": false,
+      "expected_keywords": ["kim", "fund documents", "hdfc"]
+    }
+  ]
+}

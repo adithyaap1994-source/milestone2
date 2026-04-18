@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phase 2 Basic Test UI</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Phase 2 API - Basic Test UI</h1>
+      <p class="subtitle">Simple HTML/CSS test panel for sessions and chat requests</p>
+      <p id="status" class="status">Ready</p>
+
+      <section class="card">
+        <h2>Session</h2>
+        <div class="row">
+          <button id="createThreadBtn" type="button">Create New Session</button>
+        </div>
+        <label for="threadId">Thread ID</label>
+        <input id="threadId" placeholder="Create or paste thread id" />
+      </section>
+
+      <section class="card">
+        <h2>Query</h2>
+        <label for="query">Ask a question</label>
+        <textarea id="query" rows="4" placeholder="What is the expense ratio of HDFC Large Cap Fund?"></textarea>
+        <div class="row">
+          <button id="sendBtn" type="button">Send Query</button>
+          <button id="loadThreadBtn" type="button" class="secondary">Load Thread</button>
+          <button id="clearBtn" type="button" class="ghost">Clear</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Response</h2>
+        <pre id="responseBox">No response yet.</pre>
+      </section>
+
+      <section class="card">
+        <h2>Thread Messages</h2>
+        <pre id="threadBox">No thread loaded.</pre>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

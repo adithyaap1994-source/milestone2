@@ -1,0 +1,100 @@
+Local scheduler started at Sat Apr 18 21:24:53 IST 2026
+Workspace: /Users/dikshitakhandke/Documents/2024/milestone2
+\n[Phase 1] Installing dependencies
+Defaulting to user installation because normal site-packages is not writeable
+Collecting PyYAML>=6.0
+  Downloading pyyaml-6.0.3.tar.gz (130 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+Collecting requests>=2.31.0
+  Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+Collecting beautifulsoup4>=4.12.0
+  Downloading beautifulsoup4-4.14.3-py3-none-any.whl (107 kB)
+Collecting sentence-transformers>=3.0.0
+  Using cached sentence_transformers-3.2.1-py3-none-any.whl (255 kB)
+Collecting idna<4,>=2.5
+  Downloading idna-3.11-py3-none-any.whl (71 kB)
+Collecting urllib3<3,>=1.21.1
+  Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Collecting charset_normalizer<4,>=2
+  Downloading charset_normalizer-3.4.7-py3-none-any.whl (61 kB)
+Collecting soupsieve>=1.6.1
+  Downloading soupsieve-2.7-py3-none-any.whl (36 kB)
+Collecting typing-extensions>=4.0.0
+  Using cached typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+Collecting transformers<5.0.0,>=4.41.0
+  Downloading transformers-4.46.3-py3-none-any.whl (10.0 MB)
+ERROR: Could not find a version that satisfies the requirement torch>=1.11.0 (from sentence-transformers>=3.0.0->-r /Users/dikshitakhandke/Documents/2024/milestone2/phase-1/requirements.txt (line 4)) (from versions: none)
+ERROR: No matching distribution found for torch>=1.11.0 (from sentence-transformers>=3.0.0->-r /Users/dikshitakhandke/Documents/2024/milestone2/phase-1/requirements.txt (line 4))
+WARNING: You are using pip version 20.2.3; however, version 25.0.1 is available.
+You should consider upgrading via the '/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -m pip install --upgrade pip' command.
+[Phase 1] pip exit code: 1
+\n[Phase 1] Running ingestion pipeline
+  File "/Users/dikshitakhandke/Documents/2024/milestone2/phase-1/run_phase1.py", line 19
+    from __future__ import annotations
+    ^
+SyntaxError: from __future__ imports must occur at the beginning of the file
+[Phase 1] run exit code: 1
+\n[Phase 2] Running compliance demo
+Running Phase 2 compliance demo...
+
+{
+  "request_id": "1daade5d-2e64-4668-beb6-74519901870c",
+  "thread_id": "thread-1",
+  "intent": "factual_query",
+  "response": {
+    "answer": "I could not find enough approved factual evidence for this query in the indexed sources. Please rephrase using scheme-specific terms.",
+    "sources": [],
+    "last_updated": [],
+    "disclaimer": "Facts-only. No investment advice.",
+    "policy_decision": "insufficient_evidence"
+  },
+  "messages_in_thread": 2
+}
+------------------------------------------------------------
+{
+  "request_id": "e80f9532-8cdc-43b1-b400-39ad2d2f3c26",
+  "thread_id": "thread-1",
+  "intent": "advisory_query",
+  "response": {
+    "answer": "I can only provide factual information from approved mutual fund sources. I cannot provide investment advice or recommendations.",
+    "sources": [],
+    "last_updated": [],
+    "disclaimer": "Facts-only. No investment advice.",
+    "policy_decision": "advisory_refusal"
+  },
+  "messages_in_thread": 4
+}
+------------------------------------------------------------
+{
+  "request_id": "491f02d3-c1e9-4213-8e1a-9933e3b4b5c7",
+  "thread_id": "thread-2",
+  "intent": "out_of_scope",
+  "response": {
+    "answer": "I can only provide factual information about mutual fund schemes from approved sources. This request is out of scope.",
+    "sources": [],
+    "last_updated": [],
+    "disclaimer": "Facts-only. No investment advice.",
+    "policy_decision": "out_of_scope_refusal"
+  },
+  "messages_in_thread": 2
+}
+------------------------------------------------------------
+[Phase 2] run exit code: 0
+\n[Phase 3] Running evaluation and release gates
+Phase 3 run complete.
+{
+  "release_passed": false,
+  "reports_dir": "/Users/dikshitakhandke/Documents/2024/milestone2/phase-3/reports"
+}
+[Phase 3] run exit code: 0
+\nLocal scheduler finished at Sat Apr 18 21:25:40 IST 2026
+Log file: /Users/dikshitakhandke/Documents/2024/milestone2/phase-1/reports/local_scheduler_20260418_212453.log

@@ -1,0 +1,172 @@
+sources:
+  - source_url: "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Mid-Cap Fund Direct Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Equity Fund Direct Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-focused-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Focused Fund Direct Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC ELSS Tax Saver Fund Direct Plan Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Large Cap Fund Direct Growth"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-large-cap-fund/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Large Cap Fund Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-flexi-cap-fund/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Flexi Cap Fund Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-flexi-cap-fund/regular"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Flexi Cap Fund Regular"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC ELSS Tax Saver Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver/regular"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC ELSS Tax Saver Regular"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-mid-cap-fund/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Mid-Cap Fund Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/mutual-funds/fund-documents/kim"
+    source_type: "kim_index"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/mutual-funds/factsheets"
+    source_type: "factsheet_index"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/statutory-disclosure/total-expense-ratio-of-mutual-fund-schemes/reports"
+    source_type: "statutory_disclosure"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+    source_type: "statutory_disclosure"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/statutory-disclosure"
+    source_type: "statutory_disclosure"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/learn/blog/how-get-capital-gain-statement-mutual-fund-schemes-india"
+    source_type: "faq"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+sources:
+  - source_url: "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Mid-Cap Fund Direct Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Equity Fund Direct Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-focused-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Focused Fund Direct Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC ELSS Tax Saver Fund Direct Growth"
+    active: true
+  - source_url: "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Large Cap Fund Direct Growth"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-large-cap-fund/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Large Cap Fund Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-flexi-cap-fund/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Flexi Cap Fund Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-flexi-cap-fund/regular"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Flexi Cap Fund Regular"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC ELSS Tax Saver Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver/regular"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC ELSS Tax Saver Regular"
+    active: true
+  - source_url: "https://www.hdfcfund.com/explore/mutual-funds/hdfc-mid-cap-fund/direct"
+    source_type: "scheme_page"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "HDFC Mid-Cap Fund Direct"
+    active: true
+  - source_url: "https://www.hdfcfund.com/mutual-funds/fund-documents/kim"
+    source_type: "kim_index"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/mutual-funds/factsheets"
+    source_type: "factsheet_index"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/statutory-disclosure/total-expense-ratio-of-mutual-fund-schemes/reports"
+    source_type: "statutory_disclosure"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio"
+    source_type: "statutory_disclosure"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/statutory-disclosure"
+    source_type: "statutory_disclosure"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true
+  - source_url: "https://www.hdfcfund.com/learn/blog/how-get-capital-gain-statement-mutual-fund-schemes-india"
+    source_type: "faq"
+    amc_name: "HDFC Mutual Fund"
+    scheme_name: "Multiple"
+    active: true

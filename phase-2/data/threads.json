@@ -1,0 +1,148 @@
+{
+  "94182dca-cbda-414d-9956-8524bc0cb7c8": {
+    "thread_id": "94182dca-cbda-414d-9956-8524bc0cb7c8",
+    "messages": [],
+    "metadata": {}
+  },
+  "d80e0021-e4ae-4702-a0ae-eb2680ab396e": {
+    "thread_id": "d80e0021-e4ae-4702-a0ae-eb2680ab396e",
+    "messages": [],
+    "metadata": {}
+  },
+  "7319a220-c136-4f0d-9f62-a18697ccf331": {
+    "thread_id": "7319a220-c136-4f0d-9f62-a18697ccf331",
+    "messages": [
+      {
+        "thread_id": "7319a220-c136-4f0d-9f62-a18697ccf331",
+        "role": "user",
+        "content": "What is expense ratio?",
+        "intent": "factual_query",
+        "policy_decision": "received",
+        "citations": []
+      },
+      {
+        "thread_id": "7319a220-c136-4f0d-9f62-a18697ccf331",
+        "role": "assistant",
+        "content": "I could not find enough approved factual evidence for this query in the indexed sources. Please rephrase using scheme-specific terms.",
+        "intent": null,
+        "policy_decision": "insufficient_evidence",
+        "citations": []
+      }
+    ],
+    "metadata": {}
+  },
+  "bb8cbbf8-4c2b-4b3f-b114-537b63e6275f": {
+    "thread_id": "bb8cbbf8-4c2b-4b3f-b114-537b63e6275f",
+    "messages": [
+      {
+        "thread_id": "bb8cbbf8-4c2b-4b3f-b114-537b63e6275f",
+        "role": "user",
+        "content": "Should I invest now?",
+        "intent": "advisory_query",
+        "policy_decision": "received",
+        "citations": []
+      },
+      {
+        "thread_id": "bb8cbbf8-4c2b-4b3f-b114-537b63e6275f",
+        "role": "assistant",
+        "content": "I can only provide factual information from approved mutual fund sources. I cannot provide investment advice or recommendations.",
+        "intent": null,
+        "policy_decision": "advisory_refusal",
+        "citations": []
+      }
+    ],
+    "metadata": {}
+  },
+  "thread-1": {
+    "thread_id": "thread-1",
+    "messages": [
+      {
+        "thread_id": "thread-1",
+        "role": "user",
+        "content": "What is the expense ratio of HDFC Large Cap Fund?",
+        "intent": "factual_query",
+        "policy_decision": "received",
+        "citations": []
+      },
+      {
+        "thread_id": "thread-1",
+        "role": "assistant",
+        "content": "I could not find enough approved factual evidence for this query in the indexed sources. Please rephrase using scheme-specific terms.",
+        "intent": null,
+        "policy_decision": "insufficient_evidence",
+        "citations": []
+      },
+      {
+        "thread_id": "thread-1",
+        "role": "user",
+        "content": "Which fund is best for me?",
+        "intent": "advisory_query",
+        "policy_decision": "received",
+        "citations": []
+      },
+      {
+        "thread_id": "thread-1",
+        "role": "assistant",
+        "content": "I can only provide factual information from approved mutual fund sources. I cannot provide investment advice or recommendations.",
+        "intent": null,
+        "policy_decision": "advisory_refusal",
+        "citations": []
+      }
+    ],
+    "metadata": {}
+  },
+  "thread-2": {
+    "thread_id": "thread-2",
+    "messages": [
+      {
+        "thread_id": "thread-2",
+        "role": "user",
+        "content": "Tell me cricket score",
+        "intent": "out_of_scope",
+        "policy_decision": "received",
+        "citations": []
+      },
+      {
+        "thread_id": "thread-2",
+        "role": "assistant",
+        "content": "I can only provide factual information about mutual fund schemes from approved sources. This request is out of scope.",
+        "intent": null,
+        "policy_decision": "out_of_scope_refusal",
+        "citations": []
+      }
+    ],
+    "metadata": {}
+  },
+  "e8d0343b-72d0-4674-99e1-f2678643308d": {
+    "thread_id": "e8d0343b-72d0-4674-99e1-f2678643308d",
+    "messages": [],
+    "metadata": {}
+  },
+  "af84df45-5059-4356-877a-246a9378ce68": {
+    "thread_id": "af84df45-5059-4356-877a-246a9378ce68",
+    "messages": [],
+    "metadata": {}
+  },
+  "2daceb92-63d8-4a3a-a993-6db45f938d25": {
+    "thread_id": "2daceb92-63d8-4a3a-a993-6db45f938d25",
+    "messages": [
+      {
+        "thread_id": "2daceb92-63d8-4a3a-a993-6db45f938d25",
+        "role": "user",
+        "content": "what is the expense ratio",
+        "intent": "factual_query",
+        "policy_decision": "received",
+        "citations": []
+      },
+      {
+        "thread_id": "2daceb92-63d8-4a3a-a993-6db45f938d25",
+        "role": "assistant",
+        "content": "I could not find enough approved factual evidence for this query in the indexed sources. Please rephrase using scheme-specific terms.",
+        "intent": null,
+        "policy_decision": "insufficient_evidence",
+        "citations": []
+      }
+    ],
+    "metadata": {}
+  }
+}

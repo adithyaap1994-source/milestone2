@@ -1,0 +1,47 @@
+{
+  "release_passed": false,
+  "checks": [
+    {
+      "gate": "factual_accuracy",
+      "passed": false,
+      "actual": 0.5,
+      "expected": 0.95,
+      "comparator": ">="
+    },
+    {
+      "gate": "citation_validity",
+      "passed": false,
+      "actual": 0.5,
+      "expected": 0.99,
+      "comparator": ">="
+    },
+    {
+      "gate": "hallucination_rate",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.02,
+      "comparator": "<="
+    },
+    {
+      "gate": "advisory_leakage_rate",
+      "passed": true,
+      "actual": 0.0,
+      "expected": 0.01,
+      "comparator": "<="
+    },
+    {
+      "gate": "retrieval_hit_rate",
+      "passed": false,
+      "actual": 0.5,
+      "expected": 0.9,
+      "comparator": ">="
+    }
+  ],
+  "thresholds": {
+    "factual_accuracy_min": 0.95,
+    "citation_validity_min": 0.99,
+    "hallucination_rate_max": 0.02,
+    "advisory_leakage_rate_max": 0.01,
+    "retrieval_hit_rate_min": 0.9
+  }
+}

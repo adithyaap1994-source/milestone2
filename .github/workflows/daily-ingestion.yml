@@ -1,0 +1,37 @@
+name: Daily Ingestion Pipeline
+
+on:
+  schedule:
+    # 09:15 IST daily
+    - cron: "45 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: phase1-daily-ingestion
+  cancel-in-progress: false
+
+jobs:
+  run-phase1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r phase-1/requirements.txt
+
+      - name: Run ingestion pipeline (scrape -> chunk -> embed -> local index artifacts)
+        run: python phase-1/run_phase1.py
+
+      - name: Upload phase 1 reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase1-reports
+          path: phase-1/reports/
