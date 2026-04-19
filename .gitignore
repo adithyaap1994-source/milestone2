@@ -18,3 +18,4 @@ phase-1/data/chunks/*.jsonl
 phase-1/data/index/*.jsonl
 phase-1/reports/phase1_run_*.json
 phase-1/reports/local_scheduler_*.log
+.DS_Store
