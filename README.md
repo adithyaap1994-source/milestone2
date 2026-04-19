@@ -4,7 +4,7 @@ This repository is organized by implementation phase based on `docs/phase-wise-r
 
 ## Folder Structure
 
-- `api/`: HTTP API entrypoints (see root `requirements.txt` for this area)
+- `api/`: Vercel Python serverless (`api/index.py` — `handler` for `GET /api`)
 - `phase-1/`: source registry + ingestion + chunking + bge embeddings + local retrieval artifacts
 - `phase-2/`: compliance/policy + multi-thread conversation handling + citation retrieval
 - `phase-3/`: retrieval optimization + evaluation + release gates + readiness ops
