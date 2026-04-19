@@ -1,0 +1,14 @@
+{
+  "name": "milestone2",
+  "private": true,
+  "description": "Root package.json so Vercel treats this repo as Node/Next.js (not Python) when the project root is the monorepo. The Next app lives in phase-2/frontend.",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "workspaces": [
+    "phase-2/frontend"
+  ],
+  "scripts": {
+    "build": "npm run build -w phase2-frontend"
+  }
+}

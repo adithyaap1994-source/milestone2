@@ -125,7 +125,7 @@ Define on Render:
 ### Project Setup
 
 - **Root directory** (Vercel project setting): **`phase-2/frontend`** (recommended). The app’s own `phase-2/frontend/vercel.json` then applies.
-- **If you leave Root Directory at the repository root** (common mistake): this repo includes a **root `vercel.json`** that pins **`framework: "nextjs"`** and runs install/build under **`phase-2/frontend`**, so the deployment still builds the Next app instead of Python.
+- **If you leave Root Directory at the repository root** (common mistake): the repo has a **root `package.json`** with an **npm workspace** for `phase-2/frontend` plus a **root `vercel.json`** with **`framework: "nextjs"`** and default **`npm install` / `npm run build`**. Together they force a **Node/Next** build so Vercel does not treat tracked `phase-*/requirements.txt` files as a Python app (which causes “No python entrypoint found”).
 - **Framework preset**: Next.js (auto-detected from `package.json` / `vercel.json`).
 - The Render blueprint is **`deploy/render.yaml`**, not `render.yaml` at the root, so Vercel does not mis-detect the monorepo as a Python Render service.
 
