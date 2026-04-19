@@ -124,12 +124,42 @@ Define on Render:
 
 ### Project Setup
 
-- Root directory: `phase-2/frontend`
-- Framework preset: Next.js
+- **Root directory** (Vercel project setting): `phase-2/frontend`
+- **Framework preset**: Next.js (auto-detected from `package.json` / `vercel.json`)
+- This repo includes `phase-2/frontend/vercel.json` so install/build commands stay explicit; Vercel still uses the default Next.js output (`.next`).
+
+### Connect the repository (dashboard)
+
+1. Sign in at [Vercel](https://vercel.com) → **Add New…** → **Project**.
+2. **Import** the GitHub repository that contains this monorepo.
+3. Under **Configure Project**:
+   - Set **Root Directory** to **`phase-2/frontend`** (Edit → select folder). Vercel must run commands from this directory so `next build` resolves `app/` and dependencies correctly.
+   - **Framework Preset**: Next.js (should auto-detect).
+   - **Build Command**: `npm run build` (default).
+   - **Install Command**: `npm install` (default).
+4. **Environment Variables** (before first deploy):
+   - Name: `NEXT_PUBLIC_API_BASE_URL`
+   - Value: your Render backend origin, e.g. `https://mutual-fund-faq-api.onrender.com` (no trailing slash; use **https**).
+   - Add for **Production** and **Preview** (and **Development** if you use `vercel dev`), so preview deployments can call a staging API if you configure one.
+5. **Deploy**. After the build, open the `.vercel.app` URL and verify the UI loads and can create a thread (browser calls the Render API; CORS on the Phase 2 server must allow the Vercel origin — current backend uses `Access-Control-Allow-Origin: *`).
 
 ### Environment Variables (Vercel)
 
 - `NEXT_PUBLIC_API_BASE_URL=https://<render-backend-domain>`
+
+See `phase-2/frontend/.env.example` for a template. Values prefixed with `NEXT_PUBLIC_` are exposed to the browser; do not put secrets in them.
+
+### CLI (optional)
+
+From your machine, with [Vercel CLI](https://vercel.com/docs/cli) installed:
+
+```bash
+cd phase-2/frontend
+vercel link   # once per project
+vercel --prod
+```
+
+Set `NEXT_PUBLIC_API_BASE_URL` in the linked project on Vercel or via `vercel env add`.
 
 ### Build
 
@@ -141,6 +171,7 @@ Define on Render:
 
 - Verify CORS on backend allows Vercel origin.
 - Add environment variables separately per Vercel environment (Preview/Production).
+- Point Preview `NEXT_PUBLIC_API_BASE_URL` at a staging Render service if you split environments; Production should use the production API URL.
 
 ## 6) CI/CD Flow
 
