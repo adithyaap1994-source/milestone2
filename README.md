@@ -4,6 +4,7 @@ This repository is organized by implementation phase based on `docs/phase-wise-r
 
 ## Folder Structure
 
+- `api/`: HTTP API entrypoints (see root `requirements.txt` for this area)
 - `phase-1/`: source registry + ingestion + chunking + bge embeddings + local retrieval artifacts
 - `phase-2/`: compliance/policy + multi-thread conversation handling + citation retrieval
 - `phase-3/`: retrieval optimization + evaluation + release gates + readiness ops
@@ -12,7 +13,3 @@ This repository is organized by implementation phase based on `docs/phase-wise-r
 ## Current Status
 
 All three phases are implemented based on `docs/phase-wise-rag-architecture.md`.
-
-
-
-fjkdghkjfhgkjhfgkjhk
