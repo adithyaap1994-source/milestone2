@@ -74,6 +74,30 @@ Recommended branches:
   - `pip install -r phase-2/requirements.txt`
 - Start command:
   - `python phase-2/run_phase2_ui.py`
+- The API listens on **`0.0.0.0`** and uses the **`PORT`** environment variable (set by Render). Local default remains `8080` if `PORT` is unset.
+
+### Infrastructure as Code (`render.yaml`)
+
+This repo includes a **Render Blueprint** at the repository root: `render.yaml`. It defines the web service, health check path (`/health`), Python version, and `PYTHONUNBUFFERED`.
+
+**Create or update the service from the dashboard**
+
+1. Sign in at [Render Dashboard](https://dashboard.render.com).
+2. **New +** → **Blueprint** (or **Web Service** if you prefer manual setup).
+3. Connect the GitHub repository that contains `render.yaml` and select branch **`main`**.
+4. Apply the blueprint; Render will create **`mutual-fund-faq-api`** (you can rename the service in the UI).
+5. After the first deploy succeeds, copy the public URL (e.g. `https://mutual-fund-faq-api.onrender.com`) for Vercel: set `NEXT_PUBLIC_API_BASE_URL` to that origin (no trailing slash).
+
+**Manual Web Service** (same as blueprint, if not using Blueprint)
+
+- **Root directory**: repository root (default).
+- **Build command**: `pip install -r phase-2/requirements.txt`
+- **Start command**: `python phase-2/run_phase2_ui.py`
+- **Health check path**: `/health`
+
+### Index data on the server
+
+Retrieval reads `phase-1/data/index/keyword_payload.jsonl` relative to the repo root. Those JSONL files are intentionally gitignored until you choose a distribution strategy. Until they exist on the instance, the API still runs and `/health` succeeds; factual answers may return **insufficient evidence** until you either commit a small approved index for staging, restore artifacts to disk during deploy, or sync from object storage in a follow-up step.
 
 ### Required Environment Variables
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -126,8 +127,9 @@ class Phase2UIHandler(BaseHTTPRequestHandler):
 
 
 def main() -> None:
-    server = ThreadingHTTPServer(("0.0.0.0", 8080), Phase2UIHandler)
-    print("Phase 2 API running at http://localhost:8080")
+    port = int(os.environ.get("PORT", "8080"))
+    server = ThreadingHTTPServer(("0.0.0.0", port), Phase2UIHandler)
+    print(f"Phase 2 API listening on 0.0.0.0:{port}")
     server.serve_forever()
 
 

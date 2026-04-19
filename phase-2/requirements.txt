@@ -1,1 +1,2 @@
-# No external Python dependencies required for Phase 2 local mode.
+# Phase 2 API uses the Python standard library only; this file exists so
+# Render (and other hosts) can run `pip install -r phase-2/requirements.txt`.
