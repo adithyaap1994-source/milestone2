@@ -1,8 +1,9 @@
 # Render Blueprint — Mutual Fund FAQ Phase 2 API
 # https://render.com/docs/blueprint-spec
 #
-# After merge: Dashboard → New → Blueprint → connect this repo, or
-# add this repo to Render and select "Apply render.yaml".
+# This file lives under deploy/ so Vercel (repo root) does not treat the repo
+# as a Python Render service. In Render: New → Blueprint → set blueprint path
+# to deploy/render.yaml (or paste from this file).
 
 services:
   - type: web

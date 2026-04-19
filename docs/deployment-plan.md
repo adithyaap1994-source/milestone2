@@ -76,15 +76,15 @@ Recommended branches:
   - `python phase-2/run_phase2_ui.py`
 - The API listens on **`0.0.0.0`** and uses the **`PORT`** environment variable (set by Render). Local default remains `8080` if `PORT` is unset.
 
-### Infrastructure as Code (`render.yaml`)
+### Infrastructure as Code (`deploy/render.yaml`)
 
-This repo includes a **Render Blueprint** at the repository root: `render.yaml`. It defines the web service, health check path (`/health`), Python version, and `PYTHONUNBUFFERED`.
+The **Render Blueprint** lives at **`deploy/render.yaml`** (not the repo root) so **Vercel** imports that use the repository root do not pick up a root `render.yaml` and try to run the **Python** builder (which fails with “No python entrypoint found”). Render still supports blueprints from a subpath when you specify it in the Blueprint flow.
 
 **Create or update the service from the dashboard**
 
 1. Sign in at [Render Dashboard](https://dashboard.render.com).
 2. **New +** → **Blueprint** (or **Web Service** if you prefer manual setup).
-3. Connect the GitHub repository that contains `render.yaml` and select branch **`main`**.
+3. Connect the GitHub repository, select branch **`main`**, and set the blueprint file path to **`deploy/render.yaml`** when prompted (or paste its contents).
 4. Apply the blueprint; Render will create **`mutual-fund-faq-api`** (you can rename the service in the UI).
 5. After the first deploy succeeds, copy the public URL (e.g. `https://mutual-fund-faq-api.onrender.com`) for Vercel: set `NEXT_PUBLIC_API_BASE_URL` to that origin (no trailing slash).
 
@@ -124,9 +124,10 @@ Define on Render:
 
 ### Project Setup
 
-- **Root directory** (Vercel project setting): `phase-2/frontend`
-- **Framework preset**: Next.js (auto-detected from `package.json` / `vercel.json`)
-- This repo includes `phase-2/frontend/vercel.json` so install/build commands stay explicit; Vercel still uses the default Next.js output (`.next`).
+- **Root directory** (Vercel project setting): **`phase-2/frontend`** (recommended). The app’s own `phase-2/frontend/vercel.json` then applies.
+- **If you leave Root Directory at the repository root** (common mistake): this repo includes a **root `vercel.json`** that pins **`framework: "nextjs"`** and runs install/build under **`phase-2/frontend`**, so the deployment still builds the Next app instead of Python.
+- **Framework preset**: Next.js (auto-detected from `package.json` / `vercel.json`).
+- The Render blueprint is **`deploy/render.yaml`**, not `render.yaml` at the root, so Vercel does not mis-detect the monorepo as a Python Render service.
 
 ### Connect the repository (dashboard)
 
