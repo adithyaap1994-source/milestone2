@@ -14,8 +14,15 @@ jobs:
   run-phase1:
     runs-on: ubuntu-latest
     steps:
+      # Avoid actions/checkout post-job: it runs `git submodule foreach` which fails if the
+      # tree has a gitlink (mode 160000) without a matching .gitmodules URL.
       - name: Checkout
-        uses: actions/checkout@v4
+        run: |
+          set -euo pipefail
+          git init
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch --no-tags --prune --depth=1 origin "${{ github.sha }}"
+          git checkout --progress FETCH_HEAD
 
       - name: Setup Python
         uses: actions/setup-python@v5
